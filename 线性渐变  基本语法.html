@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>线性渐变 基本语法</title>
+    <style>
+        .ceng {
+
+
+            /* 
+                用角度或者制定的方向改变渐变的方向：
+                    to left : 270 deg
+                    to right: 90  deg
+                    to top: 0 deg
+                    to bottom: 180 deg
+                    在相同位置替换就能达到相同的效果
+            */
+
+            width: 100px;
+            height: 100px;
+            /* 默认从上到下的线性渐变 */
+            /* background-image: linear-gradient(orange, green); */
+
+
+            /* 分别是从左到右渐变  。。。。。 */
+            /* background-image: linear-gradient(to right, orange, green); */
+            /* background-image: linear-gradient(to left, orange, green); */
+            /* background-image: linear-gradient(to top, orange, green); */
+            /* background-image: linear-gradient(to bottom, orange, green); */
+
+
+
+            /* 渐变的的颜色后面可以加百分号和数字 */
+            /* background-image: linear-gradient(to right, orange 50%, green 60%, red 90%); */
+
+
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="ceng"></div>
+</body>
+
+</html>

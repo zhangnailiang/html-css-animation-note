@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>径向渐变 基本语法</title>
+    <style>
+        .ceng {
+            width: 100px;
+            height: 100px;
+            border: 1px solid #000;
+            border-radius: 50%;
+            float: left;
+            margin: 10px
+        }
+
+        .circle {
+            /* 圆形进行渐变 */
+            /* background-image: radial-gradient(circle at center, orange, green); */
+
+            /* 
+                在at 后添加  top left、top right、bottom left、 bottom right
+                表示在  左上 右上  左下   右下 开始渐变
+            */
+            /* background-image: radial-gradient(circle at top left, orange, green);
+            background-image: radial-gradient(circle at top right, orange, green);
+            background-image: radial-gradient(circle at bottom left, orange, green);
+            background-image: radial-gradient(circle at bottom right, orange, green); */
+
+            /* background-image: radial-gradient(circle at center, orange, green); */
+
+
+        }
+
+        .ellipse {
+            /* 椭圆形进行渐变 表示从20 30的椭圆处开始渐变 */
+            /* background-image: radial-gradient(20px 30px ellipse at center, orange, green); */
+            /* 圆形进行渐变 表示从20圆形处开始渐变 */
+            /* background-image: radial-gradient(20px circle at center, orange, green) */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="ceng circle"></div>
+    <div class="ceng ellipse"></div>
+</body>
+
+</html>

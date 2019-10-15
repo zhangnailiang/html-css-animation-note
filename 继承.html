@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>继承</title>
+</head>
+
+<body>
+    <script>
+
+
+
+        //原型链继承   重点是原型链的重写:
+        //缺点； 
+        //  1. 实例的constructor 改变  
+        //  2. 多个实例对引用类型的操作会被篡改。
+        //  3. 无法为不同的实例初始化继承来的属性
+        function SuperType() {
+            this.property = true;
+        }
+        SuperType.prototype.getSuperValue = function () {
+            return this.property;
+        }
+        function SubType() {
+            this.subproperty = false;
+        }
+        SubType.prototype = new SuperType();
+        SubType.prototype.getSubValue = function () {
+            return this.subproperty;
+        }
+        var instance = new SubType();
+
+
+
+        //构造函数继承  （核心是  call/apply 方法）
+        //优点：
+        // 1. 创建子类实例时调用SuperType构造函数，于是SubType的每个实例都会将SuperType中的属性复制一份。
+        //缺点：
+        //  1.只能继承父类的实例属性和方法，不能继承原型属性/方法
+        //  2.每个子类都有父类实例函数的副本，影响性能
+        function Parent() {
+            this.color = ["red", "blue", "green"];
+        }
+        function Child() {
+            Parent.call(this)
+        }
+        const child = new Child();
+
+
+
+        //组合继承：
+        //  采用了前面两者的方法： 既可以进行原型链继承  也可以继承实例的属性方法
+        //缺点： 调用了两次父类的方法
+        function SuperType() {
+            this.property = true;
+        }
+        SuperType.prototype.getSuperValue = function () {
+            return this.property;
+        }
+        function SubType() {
+            SuperType.call(this) //关键点
+            this.subproperty = false;
+        }
+        SubType.prototype = new SuperType();
+        SubType.prototype.getSubValue = function () {
+            return this.subproperty;
+        }
+
+
+
+        // 原型式继承：利用一个空对象作为中介，将某个对象直接赋值给空对象构造函数的原型
+        // 缺点：
+        // 1.原型链继承多个实例的引用类型属性指向相同，存在篡改的可能。
+        // 2.无法传递参数
+        // ES5中存在Object.create()的方法，能够代替上面的object方法。
+        function object(obj) {
+            function F() { }
+            F.prototype = obj;
+            return new F();
+        }
+
+
+
+        // 寄生组合式继承：寄生组合式继承强化的部分就是在组合继承的基础上减少一次多余的调用父类的构造函数
+        function object(o) {    //等同于Object。create()
+            function F() { }
+            F.prototype = o;
+            return new F();
+        }
+        //父层，超级层
+        function Father(name) {
+            this.name = name;
+            this.friends = ["小花", "小草"];
+        }
+        Father.prototype.sayname = function () {
+            console.log(this.name);
+        }
+        function Child(name, age) {
+            Father.call(this, name);//继承属性
+            this.age = age;
+        }
+        function inheritPrototype(child, father) {
+            var prototype = object(father.prototype);//返回一个新实例（对象）
+            child.prototype = prototype;
+            child.prototype.constructor = child;//增强对象
+        }
+        inheritPrototype(Child, Father);//继承父层的原型
+        Child.prototype.sayage = function () {
+            console.log(this.age);
+        }
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

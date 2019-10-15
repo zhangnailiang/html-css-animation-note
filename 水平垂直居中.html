@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            /* display: inline-block; */
+
+            /* position: relative;   此时子元素的position  必须为  fixed*/
+        }
+
+
+
+        /* 利用margin负值   水平垂直居中 */
+        /* .absolute {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            height: 200px;
+            width: 200px;
+            background-color: #ccc;
+            margin-top: -100px;
+            margin-left: -100px;
+        } */
+
+        /* #father1 {
+            width: 500px;
+            height: 300px;
+            background-color: skyblue;
+            position: relative;
+
+
+        }
+
+        #son1 {
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            margin: auto;
+        }
+
+        #father2 {
+            width: 500px;
+            height: 300px;
+            background-color: skyblue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #son2 {
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            position: relative;
+
+        } */
+
+
+
+        /* #father3 {
+            width: 500px;
+            height: 300px;
+            background-color: skyblue;
+            position: relative;
+        }
+
+        #son3 {
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%)
+        } */
+
+        /* 相对于body水平垂直居中 */
+        #son4 {
+            width: 100px;
+            height: 100px;
+            background: red;
+            position: absolute;
+            /* position: fixed;  此时无所谓父级的position属性值 */
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%)
+        }
+
+
+        .parent {
+            width: 100%;
+            height: 400px;
+            background: #666;
+            position: relative;
+        }
+
+        .children {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            background: red;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <!-- 已知宽高 -->
+
+    <!-- <div class="absolute"></div>
+
+    <div id="father1">
+        <div id="son1">我是块级元素1</div>
+    </div>
+    <div id="father2">
+        <div id="son2">我是块级元素2</div>
+    </div>
+    <div id="father3">
+        <div id="son3">我是块级元素3</div>
+    </div> -->
+    <!-- <div id="son4">我是块级元素4</div> -->
+
+    <!-- 未知宽高 -->
+
+    <div class="parent">
+        <div class="children">实现未知宽高元素垂直居中的方法1：通过定位和transform来实现</div>
+    </div>
+    <script>
+
+
+    </script>
+</body>
+
+</html>

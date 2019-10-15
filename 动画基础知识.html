@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .rect {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            /* animation: myMove 5s infinite; */
+            /*动画名称*/
+            animation-name: myMove;
+            /* 动画时间 */
+            animation-duration: 5s;
+            /* 样式 */
+            animation-timing-function: linear;
+            /* 两边慢中间快 */
+            /* animation-timing-function: ease; */
+            /* 两边快中间慢 */
+            /* animation-timing-function: ease-in-out; */
+            /* 开始慢 */
+            /* animation-timing-function: ease-in; */
+            /* 技术慢 */
+            /* animation-timing-function: ease-out; */
+            /* 延时时间 */
+            animation-delay: 3s;
+            /* 循环次数  infinite */
+            animation-iteration-count: 3;
+            /* 动画是否翻转播放 */
+            animation-direction: alternate;
+
+            position: fixed
+        }
+
+        @keyframes myMove {
+            0% {
+                top: 0px;
+                left: 0px;
+            }
+
+            25% {
+                top: 0px;
+                left: 80px;
+            }
+
+            50% {
+                top: 80px;
+                left: 80px;
+            }
+
+            75% {
+                top: 80px;
+                left: 0px;
+            }
+
+            100% {
+                top: 0px;
+                left: 0px
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="rect"></div>
+    <script>
+
+    </script>
+</body>
+
+</html>

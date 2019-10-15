@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* .red {
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+
+        .blue {
+            width: 100px;
+            height: 100px;
+            background: blue; */
+        /* } */
+        body {
+            background-color: #ccc
+        }
+
+        p:only-of-type {
+            color: red;
+        }
+
+        .taiji {
+            width: 150px;
+            height: 300px;
+            margin: 100px auto;
+            border-radius: 50%;
+            background-color: white;
+            border-left: 150px solid black;
+            position: relative;
+        }
+
+        .taiji::before {
+            position: absolute;
+            top: 0;
+            left: -75px;
+            content: "";
+            width: 0px;
+            height: 0px;
+            padding: 25px;
+            border-radius: 50%;
+            border: 50px solid black;
+            background-color: white
+        }
+
+        .taiji::after {
+            position: absolute;
+            top: 150px;
+            left: -75px;
+            content: "";
+            width: 0px;
+            height: 0px;
+            padding: 25px;
+            border-radius: 50%;
+            border: 50px solid white;
+            background-color: black
+        }
+    </style>
+</head>
+
+
+<body>
+    <div class="taiji"></div>
+
+    <div>
+        <p>我</p>
+        <p>我</p>
+        <li>ddf</li>
+        <!-- <p>爱</p>
+        <p>你</p> -->
+    </div>
+    <!-- <div class="red blue"></div>
+    <div class=" red blue"></div> -->
+    <script>
+
+        console.log('global')
+
+        for (var i = 1; i <= 5; i++) {
+            setTimeout(function () {
+                console.log(i)
+            }, i * 1000)
+            console.log(i)
+        }
+
+        new Promise(function (resolve) {
+            console.log('promise1')
+            resolve()
+        }).then(function () {
+            console.log('then1')
+        })
+
+        setTimeout(function () {
+            console.log('timeout2')
+            new Promise(function (resolve) {
+                console.log('timeout2_promise')
+                resolve()
+            }).then(function () {
+                console.log('timeout2_then')
+            })
+        }, 1000)
+    </script>
+</body>
+
+</html>

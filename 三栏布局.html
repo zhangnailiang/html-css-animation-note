@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* 浮动流体布局 */
+        /* .left1 {
+
+            float: left;
+            width: 100px;
+            height: 100px;
+            background: red
+        }
+
+        .right1 {
+            float: right;
+            width: 100px;
+            height: 100px;
+            background: blue;
+
+        }
+
+        .mid1 {
+            height: 100px;
+            background: green;
+        } */
+
+        /* BFC三栏布局 */
+        /* .left2 {
+            float: left;
+            width: 100px;
+            height: 100px;
+            background: red;
+
+        }
+
+        .right2 {
+            float: right;
+            width: 100px;
+            height: 100px;
+            background: blue;
+        }
+
+        .mid2 {
+            overflow: hidden;
+            height: 100px;
+            background: green;
+        } */
+
+
+
+        /* 双飞翼布局 */
+        /* .content3 {
+            float: left;
+            width: 100%;
+        }
+
+        .main3 {
+            height: 200px;
+            margin-left: 110px;
+            margin-right: 220px;
+            background-color: green;
+        }
+
+        .left3 {
+            float: left;
+            height: 200px;
+            width: 100px;
+            margin-left: -100%;
+            background-color: red;
+        }
+
+        .right3 {
+            width: 200px;
+            height: 200px;
+            float: right;
+            margin-left: -100%;
+            background-color: blue;
+        } */
+
+
+
+
+        /* 圣杯布局 */
+        .main {
+            overflow: hidden;
+            padding: 0px 100px;
+        }
+
+        .left4 {
+            float: left;
+            position: relative;
+            width: 100px;
+            height: 100px;
+            background-color: #a0c263;
+            left: -100px;
+            margin-left: -100%;
+        }
+
+        .right4 {
+            float: left;
+            position: relative;
+            width: 100px;
+            height: 100px;
+            background-color: #a0c263;
+            margin-right: -200px;
+        }
+
+        .mid4 {
+            float: left;
+            position: relative;
+            width: 100%;
+            height: 100px;
+            background-color: #f5c531;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="left1"></div>
+    <div class="right1"></div>
+    <div class="mid1"></div>
+
+    <div style="width: 100%; height: 20px"></div>
+
+
+    <div class="left2"></div>
+    <div class="right2"></div>
+    <div class="mid2"></div>
+
+    <div style="width: 100%; height: 20px"></div>
+
+    <!-- 双飞翼 -->
+    <div class="content3">
+        <div class="main3"></div>
+    </div>
+    <div class="left3"></div>
+    <div class="right3"></div>
+
+
+    <!-- 圣杯布局 -->
+    <div class="main">
+
+        <!-- 相当于添加 子元素的margin来抵消父级的padding的影响 父级的padding影响的是子元素的存放空间 -->
+        <div class="mid4">mid4</div>
+        <div class="left4">left4</div>
+        <div class="right4">right4</div>
+    </div>
+
+
+
+    </script>
+</body>
+
+</html>
